@@ -18,3 +18,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true   # <- 每次覆蓋 Pages，不會衝突
