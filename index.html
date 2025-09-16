@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm Ryan11035</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Animate.css for cool animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <div class="background"></div>
+    <canvas id="starfield"></canvas>
     <main>
-        <section class="intro animate__animated animate__fadeInDown">
-            <h1>I'm Ryan11035</h1>
+        <section class="intro">
+            <h1><span class="neon">I'm Ryan11035</span></h1>
             <p class="quote">“Coding is the art of turning imagination into reality.”</p>
             <p class="age">Age: 12</p>
         </section>
 
-        <section class="languages animate__animated animate__fadeInUp">
-            <h2>Languages I Know</h2>
+        <section class="languages">
+            <h2 class="section-title">Languages I Know</h2>
             <div class="lang-list">
                 <div class="lang-card">JAVASCRIPT</div>
                 <div class="lang-card">HTML</div>
@@ -26,39 +24,41 @@
             </div>
         </section>
 
-        <section class="projects animate__animated animate__fadeIn">
-            <h2>My Projects</h2>
-            <div class="carousel" id="carousel">
-                <div class="carousel-item">
-                    <img src="https://placehold.co/200x120?text=Chatbot" alt="Chatbot">
-                    <div class="project-info">
-                        <h3>Chatbot</h3>
-                        <p>An intelligent chatbot built with JavaScript, offering smart conversations.</p>
+        <section class="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/220x120/1e1e2f/00fff7?text=Chatbot" alt="Chatbot">
+                        <div class="project-info">
+                            <h3>Chatbot</h3>
+                            <p>An intelligent chatbot built with JavaScript, offering smart conversations.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/220x120/1e1e2f/00fff7?text=Map" alt="Map">
+                        <div class="project-info">
+                            <h3>Map</h3>
+                            <p>An interactive map visualizer to explore places and data.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/220x120/1e1e2f/00fff7?text=Personal+Site" alt="Personal Site">
+                        <div class="project-info">
+                            <h3>Personal Site</h3>
+                            <p>My creative portfolio showcasing my skills and projects.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://placehold.co/200x120?text=Map" alt="Map">
-                    <div class="project-info">
-                        <h3>Map</h3>
-                        <p>An interactive map visualizer to explore places and data.</p>
-                    </div>
+                <div class="carousel-controls">
+                    <button id="prev">&#8678;</button>
+                    <button id="next">&#8680;</button>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://placehold.co/200x120?text=Personal+Site" alt="Personal Site">
-                    <div class="project-info">
-                        <h3>Personal Site</h3>
-                        <p>My creative portfolio showcasing my skills and projects.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button id="prev">&#8592;</button>
-                <button id="next">&#8594;</button>
             </div>
         </section>
 
-        <section class="contact animate__animated animate__fadeInUp">
-            <h2>Contact Me</h2>
+        <section class="contact">
+            <h2 class="section-title">Contact Me</h2>
             <div class="contact-buttons">
                 <a href="https://discord.com/users/YOUR_DISCORD_ID" target="_blank" class="contact-btn discord">Discord</a>
                 <a href="mailto:your.email@gmail.com" class="contact-btn gmail">Gmail</a>
@@ -66,7 +66,7 @@
         </section>
     </main>
     <footer>
-        Copyright © 2025 Ryan11035. ALL Rights Reserved.
+        <span class="footer-neon">Copyright © 2025 Ryan11035. ALL Rights Reserved.</span>
     </footer>
     <script src="script.js"></script>
 </body>
