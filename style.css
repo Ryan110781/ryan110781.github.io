@@ -1,0 +1,200 @@
+/* Animated background */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+    background: #141e30;
+}
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    background: linear-gradient(120deg, #141e30 0%, #243b55 100%);
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background: linear-gradient(120deg, #141e30 0%, #243b55 100%);}
+    50% { background: linear-gradient(120deg, #243b55 0%, #141e30 100%);}
+    100% { background: linear-gradient(120deg, #141e30 0%, #243b55 100%);}
+}
+
+/* Main layout */
+main {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    background: rgba(255,255,255,0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    padding: 30px 24px 24px 24px;
+}
+
+/* Intro */
+.intro h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+    color: #243b55;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.intro .quote {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 0.6em;
+    font-style: italic;
+}
+.intro .age {
+    font-size: 1em;
+    color: #243b55;
+    margin-top: 0;
+}
+
+/* Languages */
+.languages {
+    margin: 32px 0;
+}
+.languages h2 {
+    margin-bottom: 16px;
+    color: #141e30;
+    font-size: 1.4em;
+}
+.lang-list {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+.lang-card {
+    padding: 20px 32px;
+    background: #243b55;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(20,30,48,0.12);
+}
+.lang-card:hover {
+    background: #25a18e;
+    transform: scale(1.12) rotate(-2deg);
+    box-shadow: 0 6px 24px #25a18e60;
+}
+
+/* Carousel */
+.projects {
+    margin: 36px 0;
+}
+.projects h2 {
+    color: #243b55;
+    font-size: 1.3em;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.6s cubic-bezier(.23,1,.32,1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    opacity: 0.95;
+}
+.carousel-item img {
+    border-radius: 8px;
+    box-shadow: 0 3px 16px #243b5520;
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+}
+.project-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    color: #25a18e;
+}
+.project-info p {
+    margin: 0;
+    color: #333;
+}
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+}
+.carousel-controls button {
+    background: #25a18e;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #25a18e40;
+    transition: background 0.2s;
+}
+.carousel-controls button:hover {
+    background: #243b55;
+}
+
+/* Contact */
+.contact {
+    margin: 38px 0 22px 0;
+    text-align: center;
+}
+.contact h2 {
+    color: #141e30;
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.contact-btn {
+    padding: 14px 34px;
+    border-radius: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 12px #243b5540;
+}
+.discord { background: #5865F2; }
+.discord:hover { background: #4048a0; }
+.gmail { background: #EA4335; }
+.gmail:hover { background: #c02a1f; }
+
+/* Footer */
+footer {
+    margin-top: 18px;
+    text-align: center;
+    color: #fff;
+    background: #243b55;
+    padding: 16px 0 10px 0;
+    font-size: 1em;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 -2px 8px #243b5540;
+}
+
+@media (max-width: 600px) {
+    main { padding: 14px 6px; }
+    .carousel-item img { width: 120px; height: 80px; }
+    .lang-card { padding: 14px 12px; font-size: 1em; }
+}
