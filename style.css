@@ -1,97 +1,120 @@
-/* Animated background */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Sci-fi Starfield Background */
 body, html {
-    height: 100%;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #10101a;
+    color: #e7e7e7;
     overflow-x: hidden;
-    background: #141e30;
 }
 
-.background {
+#starfield {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     z-index: -1;
-    background: linear-gradient(120deg, #141e30 0%, #243b55 100%);
-    animation: gradientShift 8s ease-in-out infinite;
+    display: block;
+    background: transparent;
 }
 
-@keyframes gradientShift {
-    0% { background: linear-gradient(120deg, #141e30 0%, #243b55 100%);}
-    50% { background: linear-gradient(120deg, #243b55 0%, #141e30 100%);}
-    100% { background: linear-gradient(120deg, #141e30 0%, #243b55 100%);}
-}
-
-/* Main layout */
+/* Main content */
 main {
-    max-width: 800px;
-    margin: 40px auto 0 auto;
-    background: rgba(255,255,255,0.92);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    padding: 30px 24px 24px 24px;
+    max-width: 860px;
+    margin: 48px auto 0 auto;
+    background: rgba(19, 21, 34, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 64px #00fff733, 0 2px 24px #0c0e1c88;
+    padding: 36px 30px 30px 30px;
+    position: relative;
+    border: 1px solid #20233a;
+}
+
+/* Neon Effect */
+.neon {
+    color: #00fff7;
+    text-shadow:
+        0 0 8px #00fff7,
+        0 0 24px #00fff790,
+        0 0 64px #00fff740;
+    font-family: 'Orbitron', Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: #00fff7;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
 }
 
 /* Intro */
 .intro h1 {
-    font-size: 2.8em;
-    margin-bottom: 0.2em;
-    color: #243b55;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 2.7em;
+    margin-bottom: 0.1em;
+    text-align: center;
 }
 .intro .quote {
     font-size: 1em;
-    color: #777;
-    margin-bottom: 0.6em;
+    color: #c5c7d0;
+    margin-bottom: 0.5em;
+    text-align: center;
     font-style: italic;
 }
 .intro .age {
     font-size: 1em;
-    color: #243b55;
+    color: #00fff7;
+    text-align: center;
     margin-top: 0;
 }
 
 /* Languages */
 .languages {
-    margin: 32px 0;
-}
-.languages h2 {
-    margin-bottom: 16px;
-    color: #141e30;
-    font-size: 1.4em;
+    margin: 38px 0;
+    text-align: center;
 }
 .lang-list {
     display: flex;
-    gap: 18px;
+    gap: 28px;
     justify-content: center;
+    margin-top: 10px;
 }
 .lang-card {
-    padding: 20px 32px;
-    background: #243b55;
-    color: #fff;
-    border-radius: 12px;
+    padding: 22px 38px;
+    background: linear-gradient(135deg, #20233a 70%, #00fff720 100%);
+    color: #00fff7;
+    border-radius: 14px;
     font-size: 1.2em;
+    font-family: 'Orbitron', Arial, sans-serif;
     font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    box-shadow: 0 0 18px #00fff750;
+    transition: transform 0.35s cubic-bezier(.23,1,.32,1), box-shadow 0.35s, background 0.2s;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(20,30,48,0.12);
+    border: 1.5px solid #00fff7;
+    letter-spacing: 2px;
 }
 .lang-card:hover {
-    background: #25a18e;
-    transform: scale(1.12) rotate(-2deg);
-    box-shadow: 0 6px 24px #25a18e60;
+    background: linear-gradient(135deg, #00fff799 45%, #20233a 100%);
+    transform: scale(1.13) rotate(-2deg);
+    box-shadow: 0 0 36px #00fff790, 0 0 12px #00fff740;
+    color: #fff;
 }
 
 /* Carousel */
 .projects {
-    margin: 36px 0;
-}
-.projects h2 {
-    color: #243b55;
-    font-size: 1.3em;
-    margin-bottom: 18px;
+    margin: 42px 0;
     text-align: center;
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
 }
 .carousel {
     display: flex;
@@ -101,100 +124,121 @@ main {
     height: 180px;
     justify-content: center;
     align-items: center;
+    border-radius: 16px;
+    background: rgba(18, 21, 40, 0.7);
+    box-shadow: 0 0 24px #00fff720;
+    border: 1.5px solid #00fff7;
 }
 .carousel-item {
     min-width: 100%;
-    transition: transform 0.6s cubic-bezier(.23,1,.32,1);
+    transition: transform 0.7s cubic-bezier(.23,1,.32,1);
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
     justify-content: center;
-    opacity: 0.95;
+    opacity: 0.98;
 }
 .carousel-item img {
-    border-radius: 8px;
-    box-shadow: 0 3px 16px #243b5520;
-    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 0 24px #00fff770;
+    width: 220px;
     height: 120px;
     object-fit: cover;
+    border: 2px solid #00fff7;
+    background: #1e1e2f;
 }
 .project-info h3 {
     margin: 0 0 10px 0;
-    font-size: 1.1em;
-    color: #25a18e;
+    font-size: 1.15em;
+    color: #00fff7;
+    font-family: 'Orbitron', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 .project-info p {
     margin: 0;
-    color: #333;
+    color: #e7e7e7;
+    font-size: 1em;
+    max-width: 210px;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 .carousel-controls {
     display: flex;
     justify-content: center;
-    gap: 18px;
-    margin-top: 8px;
+    gap: 22px;
+    margin-top: 18px;
 }
 .carousel-controls button {
-    background: #25a18e;
-    color: #fff;
-    border: none;
+    background: #10101a;
+    color: #00fff7;
+    border: 2px solid #00fff7;
     border-radius: 50%;
-    font-size: 1.5em;
-    width: 40px;
-    height: 40px;
+    font-size: 1.7em;
+    width: 48px;
+    height: 48px;
     cursor: pointer;
-    box-shadow: 0 2px 8px #25a18e40;
-    transition: background 0.2s;
+    box-shadow: 0 0 18px #00fff770;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .carousel-controls button:hover {
-    background: #243b55;
+    background: #00fff7;
+    color: #10101a;
+    box-shadow: 0 0 28px #00fff7cc;
 }
 
 /* Contact */
 .contact {
-    margin: 38px 0 22px 0;
+    margin: 44px 0 18px 0;
     text-align: center;
-}
-.contact h2 {
-    color: #141e30;
-    font-size: 1.2em;
-    margin-bottom: 16px;
 }
 .contact-buttons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 34px;
     flex-wrap: wrap;
+    margin-top: 12px;
 }
 .contact-btn {
-    padding: 14px 34px;
+    padding: 16px 38px;
     border-radius: 10px;
-    font-size: 1em;
+    font-size: 1.08em;
     text-decoration: none;
     color: #fff;
+    font-family: 'Orbitron', Arial, sans-serif;
     font-weight: bold;
-    transition: background 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 12px #243b5540;
+    letter-spacing: 1px;
+    box-shadow: 0 0 14px #00fff750;
+    background: linear-gradient(90deg, #10101a 70%, #00fff720 100%);
+    border: 2px solid #00fff7;
+    transition: background 0.3s, box-shadow 0.3s, color 0.2s;
 }
-.discord { background: #5865F2; }
-.discord:hover { background: #4048a0; }
-.gmail { background: #EA4335; }
-.gmail:hover { background: #c02a1f; }
+.discord { color: #5865F2; background: linear-gradient(90deg, #10101a 70%, #5865F240 100%);}
+.discord:hover { background: #5865F2; color: #fff; box-shadow: 0 0 24px #5865F260;}
+.gmail { color: #EA4335; background: linear-gradient(90deg, #10101a 70%, #EA433540 100%);}
+.gmail:hover { background: #EA4335; color: #fff; box-shadow: 0 0 24px #EA433560;}
 
 /* Footer */
 footer {
-    margin-top: 18px;
+    margin-top: 28px;
     text-align: center;
-    color: #fff;
-    background: #243b55;
-    padding: 16px 0 10px 0;
+    background: #10101a;
+    padding: 20px 0 16px 0;
     font-size: 1em;
-    border-radius: 0 0 18px 18px;
-    box-shadow: 0 -2px 8px #243b5540;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -2px 24px #00fff720;
+    border-top: 2px solid #00fff7;
+}
+.footer-neon {
+    color: #00fff7;
+    text-shadow: 0 0 8px #00fff7, 0 0 24px #00fff790;
+    font-family: 'Orbitron', Arial, sans-serif;
+    letter-spacing: 1px;
 }
 
-@media (max-width: 600px) {
-    main { padding: 14px 6px; }
+/* Responsive */
+@media (max-width: 700px) {
+    main { padding: 12px 2vw; }
     .carousel-item img { width: 120px; height: 80px; }
-    .lang-card { padding: 14px 12px; font-size: 1em; }
+    .lang-card { padding: 12px 10px; font-size: 1em; }
+    .carousel { height: 140px; }
 }
